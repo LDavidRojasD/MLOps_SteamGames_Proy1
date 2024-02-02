@@ -1,8 +1,3 @@
-/venv
-# datos de origen
-Original_Data/
-# Datos revisados
-Revised_Data/
-#Datos limpios
-Clean_Data/
-
+1. EDA_Datos_Originales.ipynb
+2. ETL.ipynb
+4. Funciones_Endpoints.ipynb
