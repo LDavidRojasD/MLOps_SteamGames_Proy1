@@ -1,0 +1,8 @@
+/venv
+# datos de origen
+Original_Data/
+# Datos revisados
+Revised_Data/
+#Datos limpios
+Clean_Data/
+
