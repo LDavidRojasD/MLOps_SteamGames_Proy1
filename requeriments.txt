@@ -1,7 +1,0 @@
-fastapi
-numpy
-pandas
-pyarrow
-uvicorn
-ast
-typing
