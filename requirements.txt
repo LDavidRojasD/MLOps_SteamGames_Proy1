@@ -41,7 +41,7 @@ python-dateutil
 pytz
 requests
 requests-oauthlib
-rsa=
+rsa
 scikit-learn
 scipy
 six
