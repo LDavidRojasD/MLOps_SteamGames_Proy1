@@ -12,14 +12,14 @@ app = FastAPI() # Crear Api
 
 # Cargar datos desde el CSV y convertir en df para iniciar la aplicación:
 
-End1_Developer = pd.read_csv('Data/End1_Developer.csv', quotechar='"')                     # Endpoint 1
-End2_User = pd.read_parquet('Data/End2_User.parquet')                                      # Endpoint 2
-UReviews_F = pd.read_csv('Data/UReviews_F.csv', quotechar='"')                             # Endpoint 2
-End3_Genre_User = pd.read_parquet('Data/End3_Genre_User.parquet')                          # Endpoint 3
-End4_BestDeveloperYear = pd.read_csv('Data/End4_BestDeveloperYear.csv', quotechar='"')     # Endpoint 4
-End5_Sentimiento = pd.read_csv('Data/End5_Sentimiento.csv', quotechar='"')                 # Endpoint 5
-similitud_df= pd.read_csv('Data/similitud_df.csv', quotechar='"')                          # Modelo de recomendación ML
-names= pd.read_csv('Data/names.csv', quotechar='"')                                        # Modelo de recomendación ML
+End1_Developer = pd.read_csv('Data\\End1_Developer.csv', quotechar='"')                     # Endpoint 1
+End2_User = pd.read_parquet('Data\\End2_User.parquet')                                      # Endpoint 2
+UReviews_F = pd.read_csv('Data\\UReviews_F.csv', quotechar='"')                             # Endpoint 2
+End3_Genre_User = pd.read_parquet('Data\\End3_Genre_User.parquet')                          # Endpoint 3
+End4_BestDeveloperYear = pd.read_csv('Data\\End4_BestDeveloperYear.csv', quotechar='"')     # Endpoint 4
+End5_Sentimiento = pd.read_csv('Data\\End5_Sentimiento.csv', quotechar='"')                 # Endpoint 5
+similitud_df= pd.read_csv('Data\\similitud_df.csv', quotechar='"')                          # Modelo de recomendación ML
+names= pd.read_csv('Data\\names.csv', quotechar='"')                                        # Modelo de recomendación ML
 
 # Saludo Inicial    -------------------------------------------------------------------------------------------------------
 @app.get("/")
@@ -30,6 +30,18 @@ def read_root():
 
 @app.get("/developerStats/{developer}")
 def read_developer_stats(developer: str):
+    
+    """
+    Recibe el nombre del desarrollador como parámetro y devuelve estadísticas
+    sobre la cantidad de ítems y el porcentaje de contenido gratuito por año.
+
+    Args:
+        developer (str): El nombre del desarrollador para el cual se desean las estadísticas.
+
+    Returns:
+        list: Una lista de diccionarios que contiene estadísticas por año, incluyendo
+              el año de lanzamiento, la cantidad de ítems y el porcentaje de contenido gratuito.
+    """    
 
     # Filtrar el DataFrame por desarrollador
     developer_df = End1_Developer[End1_Developer['developer'] == developer]
@@ -47,7 +59,18 @@ def read_developer_stats(developer: str):
 
 @app.get("/userData/{user_id}")
  
-def userdata(User_id):
+def userdata(User_id:str):
+
+    """
+    Recibe el ID de usuario como parámetro y devuelve datos relacionados con ese usuario.
+
+    Args:
+        User_id (str): El ID del usuario para el cual se desean los datos.
+
+    Returns:
+        dict: Un diccionario que contiene información sobre el usuario, incluyendo el dinero gastado,
+              el porcentaje de recomendación, y la cantidad de ítems.
+    """
 
     # Filtrar el DataFrame End2_User por user_id
     user_df = End2_User[End2_User['user_id'] == User_id]
@@ -81,6 +104,18 @@ def userdata(User_id):
 @app.get("/userForGenre/{genero}")
 
 def UserForGenre(genero: str):
+
+    """
+    Recibe el nombre de género como parámetro y devuelve datos relacionados con ese género.
+
+    Args:
+        genero (str): El nombre del género para el cual se desean los datos.
+
+    Returns:
+        dict: Un diccionario que contiene información sobre el usuario con más horas jugadas
+              para el género dado y la acumulación de horas jugadas por año de lanzamiento.
+    """
+
     # Filtrar UserForGenre por el género dado
     genre_data = End3_Genre_User[End3_Genre_User['genres'] == genero]
 
@@ -104,6 +139,18 @@ def UserForGenre(genero: str):
 @app.get("/userDeveloperYear/{year}")
 
 def best_developer_year(year: int):
+
+    """
+    Recibe el año como parámetro y devuelve los 3 mejores desarrolladores
+    para ese año, basado en la cantidad total de recomendaciones positivas.
+
+    Args:
+        year (int): El año para el cual se desean los mejores desarrolladores.
+
+    Returns:
+        dict: Un diccionario que contiene el ranking de los 3 mejores desarrolladores
+              y su posición en función de las recomendaciones positivas.
+    """   
   
     # Filtrar End4_BestDeveloperYear por el año dado
     filtered_data = End4_BestDeveloperYear[End4_BestDeveloperYear['posted_year'] == year]
@@ -124,6 +171,17 @@ def best_developer_year(year: int):
 @app.get("/analysis/{ReviewsDeveloper}")
 
 def desarrollador_reviews_analysis(ReviewsDeveloper: str):
+
+    """
+    Recibe el nombre del desarrollador como parámetro y devuelve el análisis
+    de reseñas, incluyendo la cantidad de reseñas positivas y negativas.
+
+    Args:
+        ReviewsDeveloper (str): El nombre del desarrollador para el cual se desea el análisis de reseñas.
+
+    Returns:
+        dict: Un diccionario que contiene la cantidad de reseñas positivas y negativas para el desarrollador dado.
+    """
    
     # Filtrar End5_Sentimiento por el desarrollador dado
     desarrollador_data = End5_Sentimiento[End5_Sentimiento['developer'] == ReviewsDeveloper]
@@ -145,7 +203,18 @@ def desarrollador_reviews_analysis(ReviewsDeveloper: str):
 
 @app.get("/recommended_games/{id_seleccionado}")
 
-def obtener_nombres_recomendados(id_seleccionado:int):
+def recommended_games(id_seleccionado:int):
+
+    """
+    Recibe el ID del juego como parámetro de la URL y devuelve juegos recomendados para ese juego.
+
+    Args:
+        id_seleccionado (int): El ID del juego para el cual se desean juegos recomendados.
+
+    Returns:
+        dict: Un diccionario que contiene el juego seleccionado y una lista de juegos recomendados.
+    """
+
     # Obtener el nombre del juego seleccionado
     nombre_seleccionado = names.loc[names['id'] == id_seleccionado, 'app_name'].iloc[0]
 
@@ -165,6 +234,6 @@ def obtener_nombres_recomendados(id_seleccionado:int):
             nombres_recomendados.append(nombre_recomendado)
 
     # Crear y devolver el diccionario
-    diccionario_resultado = {'nombre_seleccionado': nombre_seleccionado, 'nombres_recomendados': nombres_recomendados}
+    diccionario_resultado = {'juego_seleccionado': nombre_seleccionado, 'juegos_recomendados': nombres_recomendados}
     return diccionario_resultado
 
