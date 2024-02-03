@@ -173,6 +173,10 @@ Los pasos resumidos son:
 - Creación de servicio web en Render.
 - Ingreso al enlace para consumir la Api en la web.
 
+puede ingresar a la aplicación mediante el siguiente link:
+
+[Api Deployada](https://ldavidrd.onrender.com/docs)
+
 ### 7. Video explicando el funcionamiento de FastApi deployado con Render
 
 A continuación se relaciona el link que corresponde a un video que explica el funcionamiento de la Api deployada mostrando el uso de cada uno de los endpoints directamente en servicio web:
