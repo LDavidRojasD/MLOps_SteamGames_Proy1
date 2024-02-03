@@ -12,14 +12,14 @@ app = FastAPI() # Crear Api
 
 # Cargar datos desde el CSV y convertir en df para iniciar la aplicación:
 
-End1_Developer = pd.read_csv('Data\\End1_Developer.csv', quotechar='"')                     # Endpoint 1
-End2_User = pd.read_parquet('Data\\End2_User.parquet')                                      # Endpoint 2
-UReviews_F = pd.read_csv('Data\\UReviews_F.csv', quotechar='"')                             # Endpoint 2
-End3_Genre_User = pd.read_parquet('Data\\End3_Genre_User.parquet')                          # Endpoint 3
-End4_BestDeveloperYear = pd.read_csv('Data\\End4_BestDeveloperYear.csv', quotechar='"')     # Endpoint 4
-End5_Sentimiento = pd.read_csv('Data\\End5_Sentimiento.csv', quotechar='"')                 # Endpoint 5
-similitud_df= pd.read_csv('Data\\similitud_df.csv', quotechar='"')                          # Modelo de recomendación ML
-names= pd.read_csv('Data\\names.csv', quotechar='"')                                        # Modelo de recomendación ML
+End1_Developer = pd.read_csv('Data/End1_Developer.csv', quotechar='"')                     # Endpoint 1
+End2_User = pd.read_parquet('Data/End2_User.parquet')                                      # Endpoint 2
+UReviews_F = pd.read_csv('Data/UReviews_F.csv', quotechar='"')                             # Endpoint 2
+End3_Genre_User = pd.read_parquet('Data/End3_Genre_User.parquet')                          # Endpoint 3
+End4_BestDeveloperYear = pd.read_csv('Data/End4_BestDeveloperYear.csv', quotechar='"')     # Endpoint 4
+End5_Sentimiento = pd.read_csv('Data/End5_Sentimiento.csv', quotechar='"')                 # Endpoint 5
+similitud_df= pd.read_csv('Data/similitud_df.csv', quotechar='"')                          # Modelo de recomendación ML
+names= pd.read_csv('Data/names.csv', quotechar='"')                                        # Modelo de recomendación ML
 
 # Saludo Inicial    -------------------------------------------------------------------------------------------------------
 @app.get("/")
