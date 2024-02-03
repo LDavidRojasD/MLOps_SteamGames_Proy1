@@ -12,7 +12,7 @@ app = FastAPI() # Crear Api
 
 # Cargar datos desde el CSV y convertir en df para iniciar la aplicación:
 
-End1_Developer = pd.read_csv('Data\\End1_Developer.csv', quotechar='"')                     # Endpoint 1
+End1_Developer = pd.read_csv('https://github.com/LDavidRojasD/MLOps_SteamGames_Proy1/tree/535e4e45862bef66943f9553ae9c73cb10ba05b7/Data\End1_Developer.csv', quotechar='"')                     # Endpoint 1
 End2_User = pd.read_parquet('Data\\End2_User.parquet')                                      # Endpoint 2
 UReviews_F = pd.read_csv('Data\\UReviews_F.csv', quotechar='"')                             # Endpoint 2
 End3_Genre_User = pd.read_parquet('Data\\End3_Genre_User.parquet')                          # Endpoint 3
