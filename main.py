@@ -18,7 +18,7 @@ UReviews_F = pd.read_csv('Data/UReviews_F.csv', quotechar='"')                  
 End3_Genre_User = pd.read_parquet('Data/End3_Genre_User.parquet')                          # Endpoint 3
 End4_BestDeveloperYear = pd.read_csv('Data/End4_BestDeveloperYear.csv', quotechar='"')     # Endpoint 4
 End5_Sentimiento = pd.read_csv('Data/End5_Sentimiento.csv', quotechar='"')                 # Endpoint 5
-similitud_df= pd.read_parquet('Data/similitud_df.paquet')                                  # Modelo de recomendación ML
+similitud_df= pd.read_parquet('Data/similitud_df.parquet')                                  # Modelo de recomendación ML
 names= pd.read_csv('Data/names.csv', quotechar='"')                                        # Modelo de recomendación ML
 
 # Saludo Inicial    -------------------------------------------------------------------------------------------------------
