@@ -38,7 +38,7 @@ El Proyecto Individual No. 1, centrado en Machine Learning Operations (MLOps), h
 | Data_Queries   | Documento | End4_BestDeveloperYear | csv | Generado de UReviews_CD.csv para el Endpoint 4    |
 | Data_Queries   | Documento | End5_Sentimiento    | csv     | Generado de UReviews_CD.csv y SGames_CD.csv para el Endpoint 5 |
 | Data_Queries   | Documento | names               | csv     | Generado de SGames_CD.csv para el Modelo de Recomendación |
-| Data_Queries   | Documento | similitud           | paquet     | Creado a partir del modelo de similitud de coseno  |
+| Data_Queries   | Documento | similitud           | csv     | Creado a partir del modelo de similitud de coseno  |
 | --             | Documento | Diccionario de Datos STEAM | xlsx | Diccionario de los datos originales "Original_Data" |
 | --             | Documento | 1. EDA_Datos_Originales | ipynb | Notebook del EDA preliminar                        |
 | --             | Documento | 2. ETL              | ipynb   | ETL de los archivos revisados en "Revised_Data"    |
