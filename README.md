@@ -10,7 +10,7 @@
 
 ## Descripción del Proyecto
 
-El Proyecto Individual No. 1 está centrado en Machine Learning Operations **(MLOps)**, el cual ha sido concebido con el propósito de analizar y poner en funcionamiento un sistema de recomendación de videojuegos basado en datos de la plataforma Steam. En calidad de Data Scientist, se recibieron tres conjuntos de datos esenciales para la construcción del modelo, los cuales contenían información sobre los videojuegos en steam, tiempo dejuego de los usuarios por cada videojuego, y las recomendaciones específicas realizadas por los usuarios para cada juego. Sobre la información recibida también se pide generar 5 funciones (endpoints) para ser consumida por una aplicación (FastApi) y deployada a través de Render.
+El Proyecto Individual No. 1 está centrado en Machine Learning Operations **(MLOps)**, el cual ha sido concebido con el propósito de analizar y poner en funcionamiento un sistema de recomendación de videojuegos basado en datos de la plataforma Steam. En calidad de Data Scientist, se recibieron tres conjuntos de datos esenciales para la construcción del modelo, los cuales contenían información sobre los videojuegos en steam, tiempo de juego de los usuarios por cada videojuego, y las recomendaciones específicas realizadas por los usuarios para cada juego. Sobre la información recibida también se pide generar 5 funciones (endpoints) para ser consumida por una aplicación (FastApi) y deployada a través de Render.
 
 ![Logo de Proyecto](https://i.pinimg.com/originals/af/8a/9b/af8a9bc9b016a6252b9a3e7e6a6b206e.jpg)
 
@@ -22,7 +22,7 @@ El Proyecto Individual No. 1 está centrado en Machine Learning Operations **(ML
 | Carpeta        | Tipo      | Nombre              | Formato | Descripción                                       |
 |----------------|-----------|---------------------|---------|---------------------------------------------------|
 | Original_Data  | Documento | output_steam_games  | json    | Archivo original de videojuegos                   |
-| Original_Data  | Documento | australian_user_items | json  | Archivo original de video juegos por usuario      |
+| Original_Data  | Documento | australian_user_items | json  | Archivo original de videojuegos por usuario      |
 | Original_Data  | Documento | australian_user_reviews | json | Archivo original de Comentarios de usuarios por videojuego |
 | Revised_Data   | Documento | Steam_Games         | csv     | Archivo revisado de output_steam_games.json       |
 | Revised_Data   | Documento | User_Items          | csv     | Archivo revisado de australian_user_items.json    |
@@ -220,12 +220,12 @@ Se crea un video que explica el funcionamiento de la Api deployada mostrando el 
 
  Si no sirve el link, puede descargar el video en la misma direccion de drive donde se alojan los datos.
 
+___________________________________________________________________________________________________
 # Despedida
 
-¡Gracias por visitar mi proyecto! Epero que sea útil esta documentación y sea comprensible el código. Cualquier pregunta, problema o sugerencia, por favor contactarte conmigo. ¡Agradezco su interés y apoyo!
+¡Gracias por su visita a este proyecto!</p>
+Espero que haya sido de utilidad y que haya cumplido con sus expectativas.</p>
+Cordial Saludo,
 
-Happy coding! 🚀
-
-Att,
-
-Luis David Rojas Díaz
+Luis David Rojas Díaz</p>
+ldavidrd@gmail.com
