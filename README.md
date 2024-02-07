@@ -98,6 +98,10 @@ Luego de expandir los géneros, se revisó la posibilidad de agrupar un top de g
   <img src="src/Par1.png" width="600" height="400">
 </p>
 
+| Genre         | Indie | Action | Casual | Adventure | Simulation | Strategy | RPG  | Free to Play | Early Access | VR   | Sports | Racing |
+|---------------|-------|--------|--------|-----------|------------|----------|------|--------------|--------------|------|--------|--------|
+| cumulative %         | 20.05 | 34.59  | 45.30  | 55.66     | 64.29      | 72.67    | 79.24| 81.83        | 84.10        | 86.11| 87.92  | 89.32  |
+
 El gráfico nos muestra una acumulación de videojuegos en un número reducido de géneros, lo cual se considera relevante y se concluye se deben agrupar los géneros que reprentan menos del 10% de los datos en un nuevo género "Others".
 
 <p align="center">
@@ -109,6 +113,12 @@ El número de géneros puede reducirse a 11 variables incluyendo uno nuevo "Othe
 Este datafrome es almacenado en la carpeta de "Data_Queries" y es sobre el cual se trabaja el modelo de recomendación. Este archivo se creó desde el paso anterior "ETL".
 
 Una conclusión final es que al expandir los datos vemos que el género con más videojuegos es "Indie" mientras que con los datos sin expandir se percibía como género más relevante "Action".
+
+podemos revisarlo en esta nube de palabras:
+
+<p align="center">
+  <img src="src/Par3.png" width="600" height="400">
+</p>
 
 ### 4. Funciones para Endpoints de la API
 
